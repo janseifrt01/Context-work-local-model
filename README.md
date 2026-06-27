@@ -45,6 +45,8 @@ cp vscode/continue/config.yaml    ~/.continue/config.yaml
 Než cokoli zkopíruješ, otevři [`claude-code/config.json`](claude-code/config.json) a doplň
 svůj `ANTHROPIC_API_KEY` (main route zůstává na Claude, lokální modely jen na lehké úkoly).
 
+➡️ **Podrobný návod krok za krokem pro Claude Code: [`docs/claude-code-user-guide.md`](docs/claude-code-user-guide.md).**
+
 ## Jak to funguje
 
 ```
