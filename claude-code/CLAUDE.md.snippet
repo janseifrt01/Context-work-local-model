@@ -1,0 +1,21 @@
+# --- Vlož tento blok do svého CLAUDE.md (projekt nebo ~/.claude/CLAUDE.md) ---
+
+## Delegace lehkých úkolů na lokální modely
+
+Mám k dispozici lokální modely přes MCP server `local-models` (běží zdarma na mém
+stroji). Orchestraci a náročné uvažování dělej ty (Claude), ale **lehkou práci
+deleguj na lokální modely**, ať šetříme předplatné.
+
+Kdy použít `mcp__local-models__ask_local_model` (nebo subagenta `local-worker`):
+- shrnutí souborů, logů, diffů, konverzací → role `light`
+- klasifikace / kategorizace / extrakce dat → role `light`
+- mechanické refactory, generování boilerplate, jednoduché testy → role `code`
+- prvotní průzkum / hrubý draft → role `think`
+
+Kdy NErozdělovat (nech na Claude):
+- architektonická rozhodnutí, složité debugování, design API
+- úkoly vyžadující širší kontext celého repa najednou
+- cokoli, kde záleží na vysoké kvalitě výstupu
+
+Postup: připrav stručný prompt (případně vlož relevantní úryvky kódu), zavolej
+nástroj s vhodnou rolí, výsledek zkontroluj a zapracuj.

@@ -1,0 +1,17 @@
+{
+  "//": "Zkopiruj do korene projektu jako .mcp.json (nebo pouzij `claude mcp add`).",
+  "//path": "Uprav absolutni cestu k server.js podle sebe.",
+  "mcpServers": {
+    "local-models": {
+      "command": "node",
+      "args": ["/ABSOLUTNI/CESTA/Context-work-local-model/mcp-local-models/server.js"],
+      "env": {
+        "LOCAL_BASE_URL": "http://localhost:11434/v1",
+        "LOCAL_API_KEY": "ollama",
+        "LIGHT_MODEL": "gemma4:e4b",
+        "CODE_MODEL": "qwen3-coder-next",
+        "THINK_MODEL": "qwen3.6"
+      }
+    }
+  }
+}

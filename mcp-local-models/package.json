@@ -1,0 +1,18 @@
+{
+  "name": "mcp-local-models",
+  "version": "1.0.0",
+  "description": "MCP server vystavujici lokalni modely (Ollama / LM Studio) jako nastroje pro Claude Code",
+  "type": "module",
+  "bin": {
+    "mcp-local-models": "server.js"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

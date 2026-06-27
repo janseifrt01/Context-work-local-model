@@ -12,7 +12,8 @@ na API a se zachováním soukromí.
 | Volba | Doporučení |
 |------|------------|
 | **Runtime** | **Ollama** jako automatizační backend (headless služba, JIT načítání více modelů, jeden endpoint). LM Studio si nech pro interaktivní hraní / na Macu kvůli rychlejšímu MLX backendu. Viz [`docs/runtime-recommendation.md`](docs/runtime-recommendation.md). |
-| **Claude Code** | [claude-code-router](https://github.com/musistax/claude-code-router) (CCR) — routuje `background` a vyhrazené sub-agenty na lokální modely. Config v [`claude-code/`](claude-code/). |
+| **Claude Code (subscription)** | Pro standardní předplatné (Pro/Max) → **MCP nástroje** napojené na lokální modely; orchestrace zůstává na Claude. Viz [`docs/subscription-setup.md`](docs/subscription-setup.md). |
+| **Claude Code (API klíč)** | [claude-code-router](https://github.com/musistax/claude-code-router) (CCR) — routuje `background` a vyhrazené sub-agenty na lokální modely. Config v [`claude-code/`](claude-code/). |
 | **VS Code (místo Copilota)** | [Continue.dev](https://continue.dev) — Copilot lokální modely oficiálně neumí. Continue ano. Config v [`vscode/continue/`](vscode/continue/). |
 
 ## 3 modely a jejich role
@@ -45,7 +46,9 @@ cp vscode/continue/config.yaml    ~/.continue/config.yaml
 Než cokoli zkopíruješ, otevři [`claude-code/config.json`](claude-code/config.json) a doplň
 svůj `ANTHROPIC_API_KEY` (main route zůstává na Claude, lokální modely jen na lehké úkoly).
 
-➡️ **Podrobný návod krok za krokem pro Claude Code: [`docs/claude-code-user-guide.md`](docs/claude-code-user-guide.md).**
+➡️ **Máš standardní subscription (Pro/Max)?** Použij [`docs/subscription-setup.md`](docs/subscription-setup.md) — orchestrace zůstane na Claude, lehké úkoly poběží lokálně přes MCP.
+
+➡️ **Máš API klíč a chceš routovat typy požadavků?** Krok za krokem: [`docs/claude-code-user-guide.md`](docs/claude-code-user-guide.md).
 
 ## Jak to funguje
 
