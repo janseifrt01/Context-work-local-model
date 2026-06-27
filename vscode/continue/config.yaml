@@ -1,0 +1,48 @@
+# Continue.dev config  ->  ~/.continue/config.yaml
+# Náhrada GitHub Copilota pro lokální modely ve VS Code.
+# Funguje s Ollama (:11434). Pro LM Studio viz zakomentované varianty níže.
+name: local-models
+version: 0.0.1
+schema: v1
+
+models:
+  # Chat / uvažování
+  - name: Qwen3.6 (chat)
+    provider: ollama
+    model: qwen3.6
+    roles:
+      - chat
+
+  # Editace a "apply" změn do souborů - kódový model
+  - name: Qwen3-Coder-Next (edit)
+    provider: ollama
+    model: qwen3-coder-next
+    roles:
+      - edit
+      - apply
+
+  # Autocomplete + shrnutí - rychlý lehký model
+  - name: Gemma4 (fast)
+    provider: ollama
+    model: gemma4:e4b
+    roles:
+      - autocomplete
+      - summarize
+
+  # Embeddings pro @codebase (volitelné, doporučené)
+  - name: Nomic Embed
+    provider: ollama
+    model: nomic-embed-text
+    roles:
+      - embed
+
+# --- LM Studio místo Ollama ---------------------------------------------------
+# LM Studio běží na http://localhost:1234/v1. Zaměň u modelů provider/apiBase:
+#
+#   - name: Qwen3.6 (chat)
+#     provider: lmstudio
+#     model: qwen3.6
+#     apiBase: http://localhost:1234/v1
+#     roles: [chat]
+#
+# (model = přesný identifikátor z LM Studio, viz záložka Developer.)
